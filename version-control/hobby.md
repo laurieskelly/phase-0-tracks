@@ -15,7 +15,12 @@ First, let's cover some **extremely important ground rules**
 ```
 1. Did you see the part above where I said "in public"? That's important. 
 2. No photography.
-3. Pay attention to your surroundings and wear appropriate gear. For instance, people watching during the winter holidays is a satisfying excursion. Especially in a snowstorm! But, be sure to wear a *parka*. Many peoplewatchers have lost their lives to exposure, starvation, and/or severe sunburn. 
+3. Pay attention to your surroundings and wear appropriate gear. 
+
+For instance, people watching during the winter holidays is a satisfying excursion. 
+Especially in a snowstorm! 
+But, in that case, be sure to wear a *parka*. 
+Many peoplewatchers have lost their lives to exposure, starvation, and/or severe sunburn. 
 ```
 
 >"ALWAYS do a thorough gearcheck before you peoplewatch!" 
