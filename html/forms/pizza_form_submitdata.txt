@@ -1,0 +1,30 @@
+{
+  "args": {}, 
+  "data": "", 
+  "files": {}, 
+  "form": {
+    "comments": "stand below my window and meow and I'll lower a basket for you to put the pizza in. Please do not notify owners of this order. They always eat my freakin pizza, the jerks.", 
+    "custemail": "kitty@marmelade.meow", 
+    "custname": "Kitty Marmelade", 
+    "custtel": "618 656-4453", 
+    "delivery": "19:30", 
+    "size": "medium", 
+    "topping": "cheese"
+  }, 
+  "headers": {
+    "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8", 
+    "Accept-Encoding": "gzip, deflate", 
+    "Accept-Language": "en-US,en;q=0.8", 
+    "Cache-Control": "max-age=0", 
+    "Content-Length": "307", 
+    "Content-Type": "application/x-www-form-urlencoded", 
+    "Host": "httpbin.org", 
+    "Origin": "https://httpbin.org", 
+    "Referer": "https://httpbin.org/forms/post", 
+    "Upgrade-Insecure-Requests": "1", 
+    "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_4) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/50.0.2661.102 Safari/537.36"
+  }, 
+  "json": null, 
+  "origin": "205.178.114.226", 
+  "url": "https://httpbin.org/post"
+}
