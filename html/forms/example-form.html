@@ -1,17 +1,17 @@
-<form name="adventure" action="" method="post">
+<form name="adventure" action="https://httpbin.org/post" method="post">
   <fieldset>
     <div>
-      <label>Full name:</label>
+      <label>What your mother calls you:</label>
       <input type="text" name="fullname">
     </div>
 
     <div>
-      <label>Email:</label>
+      <label>Your favorite email:</label>
       <input type="email" name="email">
     </div>
 
     <div>
-      <label>Password:</label>
+      <label>Secret passphrase:</label>
       <input type="password" name="password">
     </div>
   </fieldset>
@@ -19,15 +19,15 @@
   <fieldset>
     <div>
       <label>Adventure name:</label>
-      <input type="text" name="adv-name" placeholder="Name this adventure">
+      <input type="text" name="adventure-name" placeholder="Name this adventure">
     </div>
 
     <div>
-      <label>Type of bicycle:</label>
+      <label>What kind of bike will hurl you to your inevitable death?</label>
       <select name="bike">
         <option value="road">Road</option>
-        <option value="road">Mountain</option>
-        <option value="road">Cyclocross</option>
+        <option value="mountain">Mountain</option>
+        <option value="cyclocross">Cyclocross</option>
       </select>
     </div>
 
@@ -37,7 +37,7 @@
     </div>
 
     <div>
-      <input type="checkbox" name="cb-agree" value="agree">
+      <input type="checkbox" name="agree_checkbox" value="agree">
       I am prepared to lead this adventure.
     </div>
   </fieldset>
