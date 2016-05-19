@@ -1,0 +1,29 @@
+{
+  "args": {}, 
+  "data": "", 
+  "files": {}, 
+  "form": {
+    "adv-name": "A Scary One", 
+    "bike": "road", 
+    "cb-agree": "agree", 
+    "date": "2025-07-04", 
+    "email": "Dag@cartoons.io", 
+    "fullname": "Dagwood Bumstead", 
+    "password": "dag,yo!12345"
+  }, 
+  "headers": {
+    "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8", 
+    "Accept-Encoding": "gzip, deflate", 
+    "Accept-Language": "en-US,en;q=0.8", 
+    "Cache-Control": "max-age=0", 
+    "Content-Length": "137", 
+    "Content-Type": "application/x-www-form-urlencoded", 
+    "Host": "httpbin.org", 
+    "Origin": "null", 
+    "Upgrade-Insecure-Requests": "1", 
+    "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_4) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/50.0.2661.102 Safari/537.36"
+  }, 
+  "json": null, 
+  "origin": "205.178.114.226", 
+  "url": "https://httpbin.org/post"
+}
