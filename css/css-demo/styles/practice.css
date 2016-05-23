@@ -1,0 +1,19 @@
+#contact-info, .accomplishments {
+	font-size: .8em;
+}
+
+.job {
+	background-color: #e9e5dc;
+}
+
+.job:hover {
+	background-color: #CBC6BC;
+}
+
+#volunteer-experience .volunteer-gig {
+	background-color: #CFD9D7;
+}
+
+#volunteer-experience .volunteer-gig:hover {
+	background-color: #BAD1CD;
+}
