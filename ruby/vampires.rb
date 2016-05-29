@@ -8,8 +8,8 @@ def ask_age()
 	year_born = Integer(gets.chomp)
 
 	return [age, year_born]
-
 end
+
 
 def check_age()
 
@@ -26,8 +26,8 @@ def check_age()
 end
 
 
-def check_name()
-	# What is your name?
+def ask_name()
+
 	puts "\nWhat is your name?"
 	name = gets.chomp
 
@@ -40,8 +40,6 @@ end
 def get_truefalse_answer(question)
 
 	validated_answer = nil
-#	valid_ans = ['y','n']
-
 	while validated_answer == nil
 
 		puts question + " (y/n)"
@@ -58,7 +56,6 @@ def get_truefalse_answer(question)
 		
 		end
 	end
-
 	return validated_answer
 end
 
@@ -81,10 +78,9 @@ def test_responses(responses)
 
 	else 
 		return "Results for #{name}: inconclusive"
-
 	end
-
 end
+
 
 #### ASK QUESTIONS ####
 
@@ -92,14 +88,13 @@ def conduct_survey()
 
 	puts "Hello. Please provide truthful responses to the following questions. \n"
 
-	name = check_name()
+	name = ask_name()
 
 	age_consistent = check_age()
 
 	garlic_question = "\nOur company cafeteria serves garlic bread. Should we order some for you?"
 	wants_garlic_bread = get_truefalse_answer(garlic_question)
 
-	# Would you like to enroll in the company’s health insurance?
 	insurance_question = "\nWould you like to enroll in the company’s health insurance?"
 	wants_insurance = get_truefalse_answer(insurance_question)
 
@@ -113,12 +108,10 @@ end
 def report_results(responses)
 	
 	vampire_results = test_responses(responses)
-
 	puts "Calculating results... \n...\n"
-
 	return vampire_results
-
 end
+
 
 def how_many()
 	puts "How many surveys will you be conducting today?"
@@ -151,7 +144,7 @@ def conduct_multiple_surveys()
 		responses = conduct_survey()
 
 		puts "\n\n\n\n\n"
-		
+
 		vampire_results = report_results(responses)
 
 		if print_onscreen
@@ -162,6 +155,14 @@ def conduct_multiple_surveys()
 		
 		group_vampire_results.push([responses,vampire_results])
 	
+	end
+
+	puts "\n\n\n\n\n"
+	quest = "#{num_surveys} surveys completed successfully. Print results?"
+	print_now = get_truefalse_answer(quest)
+
+	if print_now
+		puts group_vampire_results
 	end
 
 	return group_vampire_results
