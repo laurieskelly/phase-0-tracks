@@ -1,18 +1,38 @@
-puts "Hello. Please provide truthful responses to the following questions. \n"
 
-# What is your name?
-puts "What is your name?"
-name = gets
+def ask_age()
 
-puts "Thank you, " + name 
+	puts "How old are you?"
+	age = Integer(gets.chomp)
 
-# How old are you? What year were you born?
-puts "How old are you?"
-age = gets
+	puts "Also, what year were you born?"
+	year_born = Integer(gets.chomp)
 
-puts "Also, what year were you born?"
-year_born = gets
+	return [age, year_born]
 
+def check_age()
+
+	age, year_born = ask_age()
+
+	current_year = Time.new.year
+	diff = current_year - (age + year_born)
+
+	# they could be off by 1 if birthday is later this year
+	# returns true if diff is 0 or 1
+	result = [0,1].include? diff
+
+	return result
+end
+
+
+def check_name()
+	# What is your name?
+	puts "What is your name?"
+	name = gets.chomp
+
+	puts "Thank you, " + name 
+
+	return name
+end
 
 
 def get_truefalse_answer(question)
@@ -21,43 +41,81 @@ def get_truefalse_answer(question)
 #	valid_ans = ['y','n']
 
 	while validated_answer == nil
+
 		puts question + " (y/n)"
 		ans = gets.chomp
 
 		if ans.eql? "y"
 			validated_answer = true
+		
 		elsif ans == "n"
 			validated_answer = false
+		
 		else
 			puts "Oops, please respond only with 'y' or 'n'.\n"
+		
 		end
 	end
-
-	# # convert y/n to boolean
-	# result = true
-	# if validated_answer == 'n'
-	# 	result = false
-	# end
 
 	return validated_answer
 end
 
-# Our company cafeteria serves garlic bread. Should we order some for you? 
-garlic_question = "Our company cafeteria serves garlic bread. Should we order some for you?"
-wants_garlic_bread = get_truefalse_answer(garlic_question)
-# puts garlic_question + " (y/n)"
-# wants_garlic_bread = gets
 
-# Would you like to enroll in the company’s health insurance?
-insurance_question = "Would you like to enroll in the company’s health insurance?"
-wants_insurance = get_truefalse_answer(insurance_question)
-# puts insurance_question + " (y/n)"
-# wants_insurance = gets
+def test_responses(responses)
 
-results = [name, age, year_born, wants_garlic_bread, wants_insurance]
+	name, age, bread, ins = responses
 
-puts results
+	if age && bread || ins 
+		return "#{name} is probably not a vampire."
+
+	elsif !age && (!bread || !ins)
+		return "#{name} is probably a vampire"
+
+	elsif !age && !bread && !ins
+		return "#{name} is almost certainlly a vampire"
+
+	elsif ["Dr. Acula", "Tu Fang", "Drake Cula"].include? name
+		return "Come on, #{name}, you are definitely a vampire."
+
+	else 
+		return "Results for #{name}: inconclusive"
+
+	end
+
+end
+
+#### ASK QUESTIONS ####
+
+def conduct_survey()
+
+	puts "Hello. Please provide truthful responses to the following questions. \n"
+
+	name = check_name()
+
+	age_consistent = check_age()
+
+	garlic_question = "Our company cafeteria serves garlic bread. Should we order some for you?"
+	wants_garlic_bread = get_truefalse_answer(garlic_question)
+
+	# Would you like to enroll in the company’s health insurance?
+	insurance_question = "Would you like to enroll in the company’s health insurance?"
+	wants_insurance = get_truefalse_answer(insurance_question)
+
+	responses = [name, age_consistent, wants_garlic_bread, wants_insurance]
+
+	return responses
+
+end
 
 
+def report_results(responses)
+	
+	vampire_results = test_responses(responses)
+
+	puts "Calculating results... \n...\n"
+
+	puts vampire_results
+
+end
 
 
