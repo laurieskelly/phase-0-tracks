@@ -1,13 +1,15 @@
 
 def ask_age()
 
-	puts "How old are you?"
+	puts "\nHow old are you?"
 	age = Integer(gets.chomp)
 
-	puts "Also, what year were you born?"
+	puts "\nAlso, what year were you born?"
 	year_born = Integer(gets.chomp)
 
 	return [age, year_born]
+
+end
 
 def check_age()
 
@@ -26,10 +28,10 @@ end
 
 def check_name()
 	# What is your name?
-	puts "What is your name?"
+	puts "\nWhat is your name?"
 	name = gets.chomp
 
-	puts "Thank you, " + name 
+	puts "\nThank you, " + name 
 
 	return name
 end
@@ -94,11 +96,11 @@ def conduct_survey()
 
 	age_consistent = check_age()
 
-	garlic_question = "Our company cafeteria serves garlic bread. Should we order some for you?"
+	garlic_question = "\nOur company cafeteria serves garlic bread. Should we order some for you?"
 	wants_garlic_bread = get_truefalse_answer(garlic_question)
 
 	# Would you like to enroll in the company’s health insurance?
-	insurance_question = "Would you like to enroll in the company’s health insurance?"
+	insurance_question = "\nWould you like to enroll in the company’s health insurance?"
 	wants_insurance = get_truefalse_answer(insurance_question)
 
 	responses = [name, age_consistent, wants_garlic_bread, wants_insurance]
@@ -118,4 +120,6 @@ def report_results(responses)
 
 end
 
+
+report_results(conduct_survey)
 
