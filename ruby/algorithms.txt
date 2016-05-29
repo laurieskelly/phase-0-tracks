@@ -1,0 +1,27 @@
+## use an elevator
+
+- at bank of elevators, take note of current floor
+- subtract desired floor from current floor
+- if result is negative, hit top button to call a rising elevator
+- if result was positive, hit bottom button to call a descending elevator.
+- when an elevator arrives, 
+    + check that illuminated indicator matches desired direction of travel
+    + if it is going in the right direction, navigate into the elevator 
+    + rotate 180 degrees to face the doors 
+- to direct the elevator to the correct floor, first locate the array of buttons
+    + look to the left for an array of buttons. 
+        + if found, navigate to face the buttons
+    + else, look to the right, locate the buttons, and navigate to face them
+    + else, [...] #TODO write instructions for newfangled elevators with no buttons in them
+- select the correct floor
+    + beginning at the top of the array of buttons, scan left-to-right and downwards until the button is located that displays numerical character sequence matching the number of the target floor
+    + depress the button with sufficient force to cause it to illuminate
+- while doors are closed, stand still and wait.
+- when doors open, 
+    + locate floor indicator near top of elevator doors
+    + if indicated current floor matches the target floor
+        * navigate out of the elevator
+    + else
+        * wait for doors to close and reopen
+
+
