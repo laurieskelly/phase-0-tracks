@@ -31,7 +31,7 @@ def check_name()
 	puts "\nWhat is your name?"
 	name = gets.chomp
 
-	puts "\nThank you, " + name 
+	puts "Thank you, " + name 
 
 	return name
 end
@@ -116,10 +116,56 @@ def report_results(responses)
 
 	puts "Calculating results... \n...\n"
 
-	puts vampire_results
+	return vampire_results
 
 end
 
+def how_many()
+	puts "How many surveys will you be conducting today?"
+	return Integer(gets.chomp)
+end
 
-report_results(conduct_survey)
 
+def print_results()
+	quest = "Should survey results be printed on-screen?"
+	return get_truefalse_answer(quest)
+end
+
+
+def conduct_multiple_surveys()
+
+	puts "Welcome to Vampire Survey LLC. \n"
+
+	num_surveys = how_many()
+	print_onscreen = print_results()
+
+	group_vampire_results = []
+	
+	num_surveys.times  do
+
+		puts "\n\n\nReady for next survey-taker. "
+		puts "When ready, please press <enter> to continue"
+		gets
+		puts "\n\n\n\n\n"
+
+		responses = conduct_survey()
+
+		puts "\n\n\n\n\n"
+		
+		vampire_results = report_results(responses)
+
+		if print_onscreen
+			puts vampire_results
+		end
+
+		puts "\n\nEnd of survey. Thank you very much for your cooperation."
+		
+		group_vampire_results.push([responses,vampire_results])
+	
+	end
+
+	return group_vampire_results
+
+end
+
+conduct_multiple_surveys
