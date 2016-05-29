@@ -62,13 +62,14 @@ end
 
 def test_responses(responses)
 
-	name, age, bread, ins = responses
+	name, age, bread, ins, sunshine = responses
 
-	if age && bread || ins 
-		return "#{name} is probably not a vampire."
 
-	elsif !age && (!bread || !ins)
+	if (!age && (!bread || !ins)) || sunshine
 		return "#{name} is probably a vampire"
+
+	elsif age && bread || ins 
+		return "#{name} is probably not a vampire."
 
 	elsif !age && !bread && !ins
 		return "#{name} is almost certainlly a vampire"
@@ -79,6 +80,25 @@ def test_responses(responses)
 	else 
 		return "Results for #{name}: inconclusive"
 	end
+end
+
+
+def get_allergies()
+
+	puts "\nPlease report any allergies that you have."
+	puts "When you are finished, or if you have no allergies, enter 'done'."
+
+	resp = nil
+	while resp != "done"
+
+		puts "allergy: "
+		resp = gets.chomp
+
+		if resp == 'sunshine'
+			return true
+		end
+	end
+	return false
 end
 
 
@@ -98,7 +118,9 @@ def conduct_survey()
 	insurance_question = "\nWould you like to enroll in the company’s health insurance?"
 	wants_insurance = get_truefalse_answer(insurance_question)
 
-	responses = [name, age_consistent, wants_garlic_bread, wants_insurance]
+	sunshine_allergy = get_allergies()
+
+	responses = [name, age_consistent, wants_garlic_bread, wants_insurance, sunshine_allergy]
 
 	return responses
 
@@ -165,6 +187,8 @@ def conduct_multiple_surveys()
 		puts group_vampire_results
 	end
 
+	puts "\n\n\n"
+	puts "Actually, never mind! What do these questions have to do with anything? Let's all be friends."
 	return group_vampire_results
 
 end
