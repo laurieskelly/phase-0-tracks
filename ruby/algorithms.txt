@@ -24,4 +24,21 @@
     + else
         * wait for doors to close and reopen
 
+## practicing drum assignments
 
+- collect drumpad, sticks, assignment sheet, metronome, timer
+- set timer for 30 minutes and begin countdown
+- until timer has sounded, execute assignments as follows:
+    + scan assignment sheet from top until an uncompleted assignment is found
+    + read the assignment and tap out the rhythm slowly until the assignment is understood
+    + choose a starting tempo for appropriate tempo
+    + set the metronome to appropriate tempo, then:
+        * attempt to perform the assignment to the beat of the metronome
+        * while correct completions < 8
+            - if the assignment is completed correctly, begin again immediately and increment count of correct completions by one
+            - else if frustration is above comfort threshhold
+                + if the current tempo is the starting tempo, lower metronome speed and restart assignment
+                + else if the tempo is faster than starting tempo, mark assignment completed and begin next assignment
+            - else reset count to zero, wait for the beat, and attempt again.
+        * choose a faster tempo for appropriate tempo
+- return drumpad, sticks, assignment sheet, metronome, timer to proper storage places.
