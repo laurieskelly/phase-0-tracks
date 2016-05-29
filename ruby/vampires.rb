@@ -22,11 +22,11 @@ def get_truefalse_answer(question)
 
 	while validated_answer == nil
 		puts question + " (y/n)"
-		ans = gets
+		ans = gets.chomp
 
-		if ans.equal? yes
+		if ans.eql? "y"
 			validated_answer = true
-		elsif ans.to_s.eql? "n".to_s
+		elsif ans == "n"
 			validated_answer = false
 		else
 			puts "Oops, please respond only with 'y' or 'n'.\n"
@@ -44,15 +44,15 @@ end
 
 # Our company cafeteria serves garlic bread. Should we order some for you? 
 garlic_question = "Our company cafeteria serves garlic bread. Should we order some for you?"
-# wants_garlic_bread = get_truefalse_answer(garlic_question)
-puts garlic_question + " (y/n)"
-wants_garlic_bread = gets
+wants_garlic_bread = get_truefalse_answer(garlic_question)
+# puts garlic_question + " (y/n)"
+# wants_garlic_bread = gets
 
 # Would you like to enroll in the company’s health insurance?
 insurance_question = "Would you like to enroll in the company’s health insurance?"
-# wants_insurance = get_truefalse_answer(insurance_question)
-puts insurance_question + " (y/n)"
-wants_insurance = gets
+wants_insurance = get_truefalse_answer(insurance_question)
+# puts insurance_question + " (y/n)"
+# wants_insurance = gets
 
 results = [name, age, year_born, wants_garlic_bread, wants_insurance]
 
