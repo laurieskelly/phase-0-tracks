@@ -10,5 +10,5 @@ module Shout
 
 end
 
-Shout.yell_happiy("pretty cool")
-Shout.yell_angrily("not cool")
+puts Shout.yell_happily("pretty cool")
+puts Shout.yell_angrily("not cool")
