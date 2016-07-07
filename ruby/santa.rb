@@ -1,8 +1,9 @@
 class Santa
-
-
+	attr_accessor :gender
+	attr_reader :age, :ethnicity
 
 	def initialize(gender, ethnicity, reindeer=nil)
+		
 		puts "Initializing Santa instance ..."
 
 		default_rank = [
@@ -49,19 +50,19 @@ class Santa
 		puts "after: #{@reindeer_ranking}"
 	end
 
-	def gender(new_value)
-		@gender = new_value
-		@gender
-	end
+	# def gender(new_value)
+	# 	@gender = new_value
+	# 	@gender
+	# end
 
-	# getters
-	def age
-		@age
-	end
+	# # getters
+	# def age
+	# 	@age
+	# end
 
-	def ethnicity
-		@ethnicity
-	end
+	# def ethnicity
+	# 	@ethnicity
+	# end
 
 end
 
@@ -76,7 +77,8 @@ puts iz_sanna.age
 puts iz_sanna.celebrate_birthday
 puts iz_sanna.celebrate_birthday
 puts iz_sanna.celebrate_birthday
-puts iz_sanna.gender('mindja beezwax')
+iz_sanna.gender = 'mindja beezwax'
+puts iz_sanna.gender
 
 iz_sanna.get_mad_at('Donner')
 
