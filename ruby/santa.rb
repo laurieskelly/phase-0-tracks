@@ -1,6 +1,6 @@
 class Santa
-	attr_accessor :gender
-	attr_reader :age, :ethnicity
+	attr_accessor :gender, :age
+	attr_reader :ethnicity
 
 	def initialize(gender, ethnicity, reindeer=nil)
 		
@@ -66,21 +66,21 @@ class Santa
 
 end
 
-# # one santa (release 0, 2)
-iz_sanna = Santa.new("agender", "black")
-puts iz_sanna
+# # # one santa (release 0, 2)
+# iz_sanna = Santa.new("agender", "black")
+# puts iz_sanna
 
-# iz_sanna.speak
-# iz_sanna.eat_milk_and_cookies('rugalach')
-puts iz_sanna.ethnicity
-puts iz_sanna.age
-puts iz_sanna.celebrate_birthday
-puts iz_sanna.celebrate_birthday
-puts iz_sanna.celebrate_birthday
-iz_sanna.gender = 'mindja beezwax'
-puts iz_sanna.gender
+# # iz_sanna.speak
+# # iz_sanna.eat_milk_and_cookies('rugalach')
+# puts iz_sanna.ethnicity
+# puts iz_sanna.age
+# puts iz_sanna.celebrate_birthday
+# puts iz_sanna.celebrate_birthday
+# puts iz_sanna.celebrate_birthday
+# iz_sanna.gender = 'mindja beezwax'
+# puts iz_sanna.gender
 
-iz_sanna.get_mad_at('Donner')
+# iz_sanna.get_mad_at('Donner')
 
 
 # # lots of santas (release 1)
@@ -93,3 +93,16 @@ iz_sanna.get_mad_at('Donner')
 # santas << Santa.new("gender fluid", "Mystical Creature (unicorn)")
 # santas << Santa.new("N/A", "N/A")
 
+# lots of santas (release 4)
+example_genders = ["agender", "female", "bigender", "male", "female", "gender fluid", "fabulous", "bear", "every woman", "a man in a man's world"]
+example_ethnicities = ["black", "Latino", "white", "Japanese-African", "not trusting of census-takers", "all of the races", "fabulous"]
+
+1.upto(1000) do |i|
+
+	gen = example_genders.sample(1)[0]
+	eth = example_ethnicities.sample(1)[0]
+	sanna = Santa.new(gen, eth)
+	sanna.age = 1 + rand(140)
+	puts "Santa \##{i} is #{sanna.ethnicity}, #{sanna.gender}, and aged #{sanna.age}!"
+	puts 
+end
