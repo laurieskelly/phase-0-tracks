@@ -41,31 +41,43 @@ def add_item(list, item, qty=nil, print=true)
 	return list
 end
 
+# Method to improve DRY
+def find_item(list, itemname)
+	# input: list, name of item(string)
+	# output: index of matching element from list (integer) or nil
+
+	found = false
+	counter = 0
+	# iterate through items looking for match
+	for item, qty in list
+		# remove matching item from list
+		if item.downcase.strip == itemname.downcase.strip
+			return counter
+		end
+		counter += 1
+	end
+	return nil
+end
+
 # Method to remove an item from the list
 def remove_item(list, removeitem)
 	# input: existing list, item name
 	# output: updated list
 
-	found = false
-	# iterate through items looking for match
-	for item, qty in list
-		# remove matching item from list
-		if item.downcase.strip == removeitem.downcase.strip
-			found = true
-			list.delete([item, qty])
-		end
-		break if found
-	end
+	match_index = find_item(list, removeitem)
 	# alert if not found
-	if not found
+	if not match_index
 		msg  =  "\n\n** WARNING remove_item failure: item \"#{removeitem}\" "
 		msg += "not found in list. List unchanged **"
+		return list
 	else			
-		puts "\n\nList updated: item '#{item}' removed from list.\n"
-		print_list(list)
+		list.delete_at(match_index)
+		puts "\n\nList updated: item '#{removeitem}' removed from list.\n"
+		print_list(list) if print
+		return list
 	end
 	# return updated list
-	return list
+	
 end
 	
 # Method to update the quantity of an item
@@ -73,31 +85,25 @@ def update_item_quantity(list, updateitem, new_qty, print=true)
 	# input: list, item name (string), new quantity (int or string)
 	# output: updated list
 
-	found = false
-	# iterate through items looking for match
-	for item, qty in list
-		# remove matching item from list
-		if item.downcase.strip == updateitem.downcase.strip
-			found = true
-			ind = list.index([item, qty])
-			list.delete_at(ind)
-			list.insert(ind, [item, new_qty.to_s])
-		end
-		break if found
-	end
-	# alert if not found
-	if not found
+	match_index = find_item(list, updateitem)
+	if not match_index
+		# alert if not found
 		msg  =  "\n\n** WARNING update_item_quantity failure: item "
 		msg += "\"#{removeitem}\" not found in list. List unchanged. **"
+		return list
 	else			
-		puts "\n\nList updated: item '#{item}' quantity updated to '#{new_qty}'.\n"
+		# update list
+		list.delete_at(match_index)
+		list.insert(match_index, [updateitem.strip.capitalize, new_qty.to_s])
+		# print success message
+		msg  = "\n\nList updated: item '#{updateitem}' quantity "
+		msg += "updated to '#{new_qty}'.\n"
+		puts msg
+		# print updated list
 		print_list(list) if print
+		return list
 	end
-	# return updated list
-	return list
 end
-
-
 
 # Method to print a list and make it look pretty
 def print_list(list)
