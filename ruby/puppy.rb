@@ -13,3 +13,6 @@
 # Sit
 # Shake hands
 # Eat treat
+
+class Puppy
+end
